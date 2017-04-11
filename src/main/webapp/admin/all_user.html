@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>user</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link href="./css/index.css" rel="stylesheet">
+	<link href="./css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/product.js"></script>
+    <style type="text/css">
+    	table td{
+            vertical-align: middle !important;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+	<div class="main-box">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar-header bg-info">
+				<a class="navbar-brand ">信安后台管理界面</a>
+			</div>
+			<ul class="navbar-nav nav ">
+				<a href="#"> <i class="fa fa-indent indent"></i> </a>
+			</ul>
+			<ul class="navbar-nav navbar-right nav">
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button">信息提示</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button">管理员</a></li>
+			</ul>
+		</nav>
+
+		<div class="content-box">
+			<div class="aside">
+				<nav class="navbar">
+					<ul class="nav navlist">
+						<li><a href="javascript:volid(0);" class="text-sm">系统功能</a></li>
+
+						<li>
+							<a href="./all_user.html" class="hover-color">
+								<i class="fa fa-users"></i>
+								<span>查看所有用户</span>
+							</a>
+						</li>
+						<li>
+							<a href="./all_admin.html" class="hover-color">
+								<i class="fa fa-users"></i>
+								<span>查看所有管理员</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="./add_admin.html" class="hover-color">
+								<i class="fa fa-users"></i>
+								<span>添加管理员</span>
+							</a>
+						</li>
+
+						<li><a href="javascript:volid(0);" class="text-sm">产品</a></li>
+						<li>
+							<a href="./publish_Product.html" class="hover-color newslistclick" style="cursor:pointer ">
+								<i class="fa fa-apple"></i>
+								<span>产品发布</span>
+							</a>
+						</li>
+						<li>
+							<a href="./all_prpduct.html" class="hover-color">
+								<i class="fa fa-apple"></i>
+								<span>产品列表</span>
+							</a>
+						</li>
+
+						<li><a class="text-sm">订单</a></li>
+						<li>
+							<a href="./order.html?status=1" class="hover-color newslistclick" style="cursor:pointer ">
+								<i class="fa fa-book"></i>
+								<span>未完成订单</span>
+							</a>
+						</li>
+						<li>
+							<a href="./order.html?status=2" class="hover-color newslistclick" style="cursor:pointer ">
+								<i class="fa fa-book"></i>
+								<span>已完成完成订单</span>
+							</a>
+						</li>
+						
+
+						<li><a class="text-sm">原材料</a></li>
+						<li>
+							<a href="admin/publishProduct.html" class="hover-color newslistclick" style="cursor:pointer ">
+								<i class="fa fa-cloud"></i>
+								<span>材料入库</span>
+							</a>
+						</li>
+						<li>
+							<a href="adminjsp/handle/admin_projectList.jsp" class="hover-color">
+								<i class="fa fa-cloud"></i>
+								<span>材料列表</span>
+							</a>
+						</li>
+						<li>
+							<a href="adminjsp/handle/admin_projectList.jsp" class="hover-color">
+								<i class="fa fa-cloud"></i>
+								<span>材料出库</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="content">
+				<ol class="breadcrumb">
+					<li><a href="adminjsp/handle/admin_index.jsp">主页</a>
+					</li>
+					<li><a href="javascript:void(0)">用户</a>
+					</li>
+				</ol>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">小熊订单</div>
+					<div class="panel-body">
+						<table class="table table-striped table-bordered table-hover">
+							<tr>
+								<td>姓名</td>
+								<td>联系方式</td>
+								<td>岗位</td>
+								<td>薪资</td>
+								<td>操作</td>
+							</tr>
+							<tr>
+								<td>何勇</td>
+								<td>
+									15823212346
+								</td>
+								<td>值班</td>
+								<td>1500</td>
+								<td><button class="btn">删除</button></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

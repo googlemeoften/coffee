@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.coffee.mapper.OrderMapper">
+
+    <resultMap type="order" id="OrderAndItems">
+        <id property="orderId" column="order_id"/>
+        <result property="extendId" column="extend_id"/>
+        <result property="totalPrice" column="total_price"/>
+        <result property="transactionTime" column="transaction_time"/>
+        <result property="status" column="status"/>
+        <result property="note" column="note"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
+
+    <insert id="insertOrder" parameterType="order">
+        <selectKey keyProperty="orderId" keyColumn="order_id" resultType="int">
+          select LAST_INSERT_ID()
+        </selectKey>
+
+        INSERT INTO `order` 
+        	(extend_id,total_price,transaction_time,STATUS,note,user_id) 
+        VALUES 
+        	(#{extendId},#{totalPrice},NOW(),#{status},#{note},#{userId})
+    </insert>
+
+    <update id="updateOrderStatus" parameterType="order">
+        UPDATE `order` SET status = #{status} WHERE order_id = #{orderId}
+    </update>
+
+    <select id="getOrderById" parameterType="int" resultMap="OrderAndItems">
+        SELECT * from `order` where order_id = #{orderId}
+    </select>
+
+    <select id="getOrderByUserId" parameterType="int" resultMap="OrderAndItems">
+        SELECT * FROM `order` WHERE user_id = #{userId} ORDER BY transaction_time DESC
+    </select>
+
+    <select id="getOrderByExtendId" parameterType="string" resultMap="OrderAndItems">
+        SELECT  * from `order` WHERE extend_id = #{extendId}
+    </select>
+    
+    <select id="getOrderByStatus" parameterType="int" resultMap="OrderAndItems">
+        SELECT * FROM `order` where status=#{status}
+    </select>
+
+    <select id="getOrderToday" resultMap="OrderAndItems">
+        SELECT * FROM `order` WHERE DATE(transaction_time) = CURDATE() and status = 1
+    </select>
+</mapper>

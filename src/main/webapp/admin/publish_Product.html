@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>product_publish</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link href="./css/index.css" rel="stylesheet">
+	<link href="./css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="main-box">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar-header bg-info">
+				<a class="navbar-brand ">信安后台管理界面</a>
+			</div>
+			<ul class="navbar-nav nav ">
+				<a href="#"> <i class="fa fa-indent indent"></i> </a>
+			</ul>
+			<ul class="navbar-nav navbar-right nav">
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button">信息提示</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button">管理员</a></li>
+			</ul>
+		</nav>
+
+		<div class="content-box">
+			<div class="aside">
+				<nav class="navbar">
+					<ul class="nav navlist">
+						<li><a href="javascript:volid(0);" class="text-sm">系统功能</a></li>
+
+						<li>
+							<a href="./all_user.html" class="hover-color">
+								<i class="fa fa-users"></i>
+								<span>查看所有用户</span>
+							</a>
+						</li>
+						<li>
+							<a href="./all_admin.html" class="hover-color">
+								<i class="fa fa-users"></i>
+								<span>查看所有管理员</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="./add_admin.html" class="hover-color">
+								<i class="fa fa-users"></i>
+								<span>添加管理员</span>
+							</a>
+						</li>
+
+						<li><a href="javascript:volid(0);" class="text-sm">产品</a></li>
+						<li>
+							<a href="./publish_Product.html" class="hover-color newslistclick" style="cursor:pointer ">
+								<i class="fa fa-apple"></i>
+								<span>产品发布</span>
+							</a>
+						</li>
+						<li>
+							<a href="./all_prpduct.html" class="hover-color">
+								<i class="fa fa-apple"></i>
+								<span>产品列表</span>
+							</a>
+						</li>
+
+						<li><a class="text-sm">订单</a></li>
+						<li>
+							<a href="./order.html?status=1" class="hover-color newslistclick" style="cursor:pointer ">
+								<i class="fa fa-book"></i>
+								<span>未完成订单</span>
+							</a>
+						</li>
+						<li>
+							<a href="./order.html?status=2" class="hover-color newslistclick" style="cursor:pointer ">
+								<i class="fa fa-book"></i>
+								<span>已完成完成订单</span>
+							</a>
+						</li>
+						
+
+						<li><a class="text-sm">原材料</a></li>
+						<li>
+							<a href="admin/publishProduct.html" class="hover-color newslistclick" style="cursor:pointer ">
+								<i class="fa fa-cloud"></i>
+								<span>材料入库</span>
+							</a>
+						</li>
+						<li>
+							<a href="adminjsp/handle/admin_projectList.jsp" class="hover-color">
+								<i class="fa fa-cloud"></i>
+								<span>材料列表</span>
+							</a>
+						</li>
+						<li>
+							<a href="adminjsp/handle/admin_projectList.jsp" class="hover-color">
+								<i class="fa fa-cloud"></i>
+								<span>材料出库</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="content">
+				<ol class="breadcrumb">
+					<li><a href="./index.html">主页</a>
+					</li>
+					<li><a href="javascript:void(0)">产品</a>
+					</li>
+				</ol>
+
+				<div class="panel panel-default">
+						<div class="panel-heading">小熊产品发布</div>
+						<div class="panel-body">
+							<form action="../product/publishProduct.action" method="post" enctype="multipart/form-data" >
+								<div class="form-horizontal">
+
+									<div class="form-group">
+										<label class="control-label col-md-1">产品名称</label>
+										<div class="col-sm-5">
+											<input type="text" class="form-control" name="productName" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-1">原价</label>
+										<div class="col-sm-3">
+											<input type="text" class="form-control" name="productOriginalPrice" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-1">折扣价</label>
+										<div class="col-sm-3">
+											<input type="text" class="form-control" name="productDiscountPrice" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-md-1">产品分类</label>
+										<div class="col-sm-3">
+											<select name="productType" class=" form-control input-s-sm  btn btn-group select-border">
+												<option value="0">咖啡</option>
+												<option value="1">饮品</option>
+												<option value="2">美食</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-md-1">是否促销</label>
+										<div class="col-sm-3">
+											<select name="onSale" class=" form-control input-s-sm  btn btn-group select-border">
+												<option value="0">否</option>
+												<option value="1">是</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-md-1">图片上传</label>
+										<div class="col-sm-3">
+											<input type="file" name="imageFiles" multiple="multiple" class="form-control"/>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="control-label col-md-1">产品描述</label>
+										<textarea id="productDesc"
+											class="form-control textarea-width" rows="10"
+											style="resize: none;" name="description"></textarea>
+									</div>
+
+									<div class="form-group">
+										<button type="submit"
+											class="btn btn-info col-md-1 col-md-offset-1">发布</button>
+									</div>
+								</div>
+							</form>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

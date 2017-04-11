@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>order</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/order.js"></script>
+    <style type="text/css">
+    	body{
+    		 padding-top: 52px;
+    	}
+    	
+    	.container h1{
+			margin-top: 70px;
+			margin-bottom: 70px;
+    	}
+
+        table td img{
+            width: 100px;    
+        }
+        
+          table td{
+            vertical-align: middle !important;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-listener">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../index.html">小熊咖啡网</a>
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-coffee">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+            </div>
+             <div class="collapse navbar-collapse" id="navbar-coffee">
+                <ul class="nav navbar-nav">
+                    <<li><a href="../index.html">热门推荐</a></li>
+                    <li><a href="./coffee.html">咖啡</a></li>
+                    <li><a href="./drink.html">饮品</a></li>
+                    <li><a href="./food.html">美食</a></li>
+                    <li><a href="./coffeeculture.html">咖啡文化</a></li>
+                    <li><a href="./shopcart.html">购物车</a></li>
+                    <li class="active"><a href="./order.html">我的订单</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            <span>更多<span class="caret"></span></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">关于我们</a></li>
+                            <li><a href="">联系方式</a></li>
+                            <li><a href="">常见问题</a></li>
+                        </ul>
+                    </li>
+                </ul>   
+             </div>
+            </div>
+        </nav>
+        <h1 class="page-header">我的订单</h1>
+
+        <table class="table table-hover table-striped table-bordered table-responsive">
+          <tr>
+          	<td>交易号</td>
+          	<td>商品信息</td>
+          	<td>实付款</td>
+          	<td>订单时间</td>
+          	<td>状态</td>
+          	<td>操作</td>
+          </tr>
+            <!--<tr>-->
+            	<!--<td class="extendId">20172230000000</td>-->
+                <!--<td>-->
+                    <!--<img class="photo img-thumbnail" src="../photo/coffee/coffee.jpg">-->
+                    <!--<img class="photo img-thumbnail" src="../photo/coffee/coffee.jpg">-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span>￥</span>-->
+                    <!--<span>4444</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="data">2017-2-10</span>-->
+                <!--</td>-->
+                <!--<td class="status">已付款</td>-->
+                <!--<td class="delete"><span>删除</span></td>-->
+            <!--</tr>-->
+        </table>
+    </div>
+</body>
+</html>

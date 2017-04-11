@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>shopcart</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/shopcart.js"></script>
+    <style type="text/css">
+    	body{
+    		 padding-top: 52px;
+    	}
+    	
+    	.container h1{
+			margin-top: 70px;
+			margin-bottom: 70px;
+    	}
+
+        table td{
+            vertical-align: middle !important;
+        }
+
+        table td img{
+            width: 100px;    
+        }
+        .calculate button{
+        	width:100px;
+            float: right !important;
+        }
+
+        textarea{
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            line-height: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-listener">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../index.html">小熊咖啡网</a>
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-coffee">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+            </div>
+             <div class="collapse navbar-collapse" id="navbar-coffee">
+                <ul class="nav navbar-nav">
+                    <<li><a href="../index.html">热门推荐</a></li>
+                    <li><a href="./coffee.html">咖啡</a></li>
+                    <li><a href="./drink.html">饮品</a></li>
+                    <li><a href="./food.html">美食</a></li>
+                    <li><a href="./coffeeculture.html">咖啡文化</a></li>
+                    <li class="active"><a href="./shopcart.html">购物车</a></li>
+                    <li><a href="./order.html">我的订单</a></li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            <span>更多<span class="caret"></span></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">关于我们</a></li>
+                            <li><a href="">联系方式</a></li>
+                            <li><a href="">常见问题</a></li>
+                        </ul>
+                    </li>
+                </ul>   
+             </div>
+            </div>
+        </nav>
+        <h1 class="page-header">小熊咖啡购物车</h1>
+        <table class="table table-striped table-bordered table-hover shopcart">
+            <tr>
+                <td>商品信息</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>金額</td>
+                <td>操作</td>
+            </tr>
+        </table>
+        <div class="calculate">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#Modal">结算</button>
+            <!-- <button type="button" class="btn btn-default">结算</button> -->
+            <div class="modal fade" id="Modal">
+            	<div class="modal-dialog">
+            		<div class="modal-content">
+            			<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal">
+            					<span aria-hidden="true">&times;</span>
+            				</button>
+            				 <h4 class="modal-title" id="myModalLabel">订单生成</h4>
+            			</div>
+            			<div class="modal-body">
+            				<!-- <table class="table result">
+            					<tr>
+            						<td class="info">商品信息</td>
+            						<td class="num">数量</td>
+            						<td class="unitTotal"></td>
+            					</tr>
+            				</table> -->
+            				<p class="lead"><span>总金额：￥</span><span class="total"></span></p>
+                            <textarea>
+                                
+                            </textarea>
+            			</div>
+            			<div class="modal-footer">
+        					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+       				 		<button type="button" class="btn btn-primary confirm">确认</button>
+      					</div>
+            		</div>
+            	</div>
+            </div>
+    </div>
+</body>
+</html>

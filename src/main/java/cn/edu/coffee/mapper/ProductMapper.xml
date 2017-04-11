@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.coffee.mapper.ProductMapper">
+
+	<resultMap id="productMap" type="product">
+		<id property="productId" column="product_id" />
+		<result property="productName" column="product_name" />
+		<result property="productOriginalPrice" column="product_original_price" />
+		<result property="productDiscountPrice" column="product_discount_price" />
+		<result property="productPhoto" column="product_photo" />
+		<result property="productType" column="product_type" />
+		<result property="onSale" column="onsale" />
+	</resultMap>
+
+	<select id="getProductByType" parameterType="int" resultMap="productMap">
+		SELECT * FROM product WHERE product_type = #{productType}
+	</select>
+
+	<select id="findProductById" parameterType="int" resultMap="productMap">
+		SELECT * from product where product_id = #{productId}
+	</select>
+
+	<select id="findAllProduct" resultMap="productMap">
+		SELECT * from product;
+	</select>
+
+	<insert id="insterProduct" parameterType="product">
+		<selectKey keyProperty="productId" keyColumn="product_id" resultType="int">
+			select LAST_INSERT_ID()
+		</selectKey>
+		INSERT into product
+		(product_name,product_original_price,product_discount_price,product_photo,product_type,onsale)
+		VALUE
+		(#{productName},#{productOriginalPrice},#{productDiscountPrice},#{productPhoto},#{productType},#{onSale})
+
+	</insert>
+
+	<update id="updateOriginalPrice" parameterType="product">
+		UPDATE product set product_original_price = #{productOriginalPrice} WHERE product_id =
+		#{productId}
+	</update>
+
+	<update id="updateOnSale" parameterType="product">
+		UPDATE product set product_original_price =
+		#{productOriginalPrice},product_discount_price =
+		#{productDiscountPrice},onsale = #{onSale} where product_id =
+		#{productId}
+	</update>
+
+	<update id="updatePhoto" parameterType="product">
+		UPDATE product set product_photo = #{productPhoto} WHERE product_id = #{productId}
+	</update>
+
+	<update id="updateProduct" parameterType="product">
+		UPDATE product SET product_name = #{productName}, WHERE product_id = #{productId}
+	</update>
+
+	<update id="cancelOnSale" parameterType="product">
+		UPDATE product SET
+		product_name = #{productName},
+		product_original_price = #{productOriginalPrice},
+		product_discount_price = #{productDiscountPrice},
+		product_photo = #{product_photo},
+		onsale = #{onsale},
+		description = #{description}
+		WHERE product_id = #{productId}
+	</update>
+
+	<delete id="deleteProduct" parameterType="int">
+		delete FROM product where product_id = #{productId}
+	</delete>
+
+</mapper>
